@@ -40,7 +40,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="flex justify-between flex-col xl:flex-row z-50 w-full fixed right-0 top-0 px-20 bg-white">
+            <nav className="flex justify-between flex-col xl:flex-row z-50 w-full fixed right-0 top-0 px-6 xl:px-20 bg-white">
                 <div className="header flex w-full xl:w-fit justify-between items-center">
                     <Link href={"/"}>
                         <Image className="w-24 h-24 object-contain" src={"/navbar-brand.svg"} alt="logo" width={100} height={100} />
