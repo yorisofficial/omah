@@ -1,8 +1,8 @@
 "use client"
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 import { IconMenu, IconX } from '@tabler/icons-react';
 import Button from "../button/page";
 
@@ -30,18 +30,40 @@ const menuNav = [
 ]
 
 
-
 const Navbar = () => {
     const pathname = usePathname()
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const navbarRef = useRef(null);
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
 
+    let activeNav = "";
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isWindowScrolled = window.scrollY > 140;
+            setIsScrolled(isWindowScrolled);
+        };
+        const handleClickOutside = (event: MouseEvent) => {
+            if (navbarRef.current && !(navbarRef.current as any).contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+    }, []);
+
     return (
         <div>
-            <nav className="flex justify-between flex-col xl:flex-row z-50 w-full fixed right-0 top-0 px-6 xl:px-20 bg-white">
-                <div className="header flex w-full xl:w-fit justify-between items-center">
+            <nav className={`${isScrolled ? "shadow-lg fixed" : "fixed"} border flex justify-between flex-col xl:flex-row z-50 w-full right-0 top-0 xl:px-20 bg-white`}>
+                <div className={`header px-6 flex w-full xl:w-fit justify-between items-center z-50 bg-white border-2 border-primary`}>
                     <Link href={"/"}>
                         <Image className="w-24 h-24 object-contain" src={"/navbar-brand.svg"} alt="logo" width={100} height={100} />
                     </Link>
@@ -51,9 +73,21 @@ const Navbar = () => {
                         </button>
                     </div>
                 </div>
-                <div className={`nav-menu md:w-1/2 xl:w-fit ${isOpen ? "flex flex-col py-4 gap-8 bg-white drop-shadow-xl rounded-md px-4 border-2 border-[#f4f4f4] mt-4" : "hidden"} xl:bg-none xl:drop-shadow-none xl:rounded-none xl:px-0 xl:border-none xl:mt-0 xl:flex xl:flex-row xl:justify-center xl:items-center xl:gap-8`}>
+                <div ref={navbarRef} className={`nav-menu xl:hidden flex flex-col gap-8 py-4 px-4 absolute border w-full -top-[400px] left-0 transform duration-500 ${isOpen ? "bg-white top-[100px] opacity-100 -z-50" : "opacity-0 -z-50"}`}>
                     {menuNav.map((item) => (
-                        <Link href={item.href} key={item.id} className={`${pathname === item.href ? "font-bold border-2 border-[#f4f4f4] bg-white drop-shadow-md xl:bg-none xl:border-none xl:drop-shadow-none" : ""} py-3 text-center rounded-md`}>
+                        <Link onClick={handleClick} href={item.href} key={item.id} className={`p-3 rounded ${pathname === item.href ? `bg-black text-white py-3 ${activeNav}` : ""}`}>
+                            {item.title}
+                        </Link>
+                    ))}
+                    <div className="button-group w-full xl:w-fit mx-auto flex justify-center">
+                        <Link href={"/login"}>
+                            <Button variant="primary" onClick={() => { }} className="">Login</Button>
+                        </Link>
+                    </div>
+                </div>
+                <div className={`nav-menu-desktop xl:flex items-center hidden gap-4`}>
+                    {menuNav.map((item) => (
+                        <Link onClick={handleClick} href={item.href} key={item.id} className={`p-3 rounded w-28 flex justify-center ${pathname === item.href ? `bg-black text-white py-3 ${activeNav}` : ""}`}>
                             {item.title}
                         </Link>
                     ))}
