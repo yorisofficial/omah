@@ -1,0 +1,66 @@
+{
+    "forSale": [
+        {
+            "id": 1,
+            "price": 1450000,
+            "name": "Sunny Villa",
+            "alamat": {
+                "jalan": "Jl. Gatot Subroto No. 123",
+                "kecamatan": "Semanggi",
+                "kota": "Jakarta Pusat"
+            }
+        },
+        {
+            "id": 2,
+            "price": 1650000,
+            "name": "Green Acres",
+            "alamat": {
+                "jalan": "Jl. Sudirman No. 456",
+                "kecamatan": "Setiabudi",
+                "kota": "Jakarta Selatan"
+            }
+        },
+        {
+            "id": 3,
+            "price": 1635000,
+            "name": "Ocean Breeze Cottage",
+            "alamat": {
+                "jalan": "Jl. Kawi No. 789",
+                "kecamatan": "Klojen",
+                "kota": "Malang"
+            }
+        }
+    ],
+    "forRent": [
+        {
+            "id": 1,
+            "price": 1450000,
+            "name": "Sunny Villa",
+            "alamat": {
+                "jalan": "Jl. Gatot Subroto No. 123",
+                "kecamatan": "Semanggi",
+                "kota": "Jakarta Pusat"
+            }
+        },
+        {
+            "id": 2,
+            "price": 1650000,
+            "name": "Green Acres",
+            "alamat": {
+                "jalan": "Jl. Sudirman No. 456",
+                "kecamatan": "Setiabudi",
+                "kota": "Jakarta Selatan"
+            }
+        },
+        {
+            "id": 3,
+            "price": 1635000,
+            "name": "Ocean Breeze Cottage",
+            "alamat": {
+                "jalan": "Jl. Kawi No. 789",
+                "kecamatan": "Klojen",
+                "kota": "Malang"
+            }
+        }
+    ]
+}
