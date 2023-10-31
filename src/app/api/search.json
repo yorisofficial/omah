@@ -1,0 +1,62 @@
+{
+    "locationMenu": [
+      {
+        "label": "1",
+        "value": "Denpasar"
+      },
+      {
+        "label": "2",
+        "value": "Badung"
+      },
+      {
+        "label": "3",
+        "value": "Bangli"
+      },
+      {
+        "label": "4",
+        "value": "Gianyar"
+      }
+    ],
+    "priceMenu": [
+      {
+        "label": "1",
+        "value": "$1300 - $3000"
+      },
+      {
+        "label": "2",
+        "value": "$2300 - $2800"
+      },
+      {
+        "label": "3",
+        "value": "$2200 - $2900"
+      },
+      {
+        "label": "4",
+        "value": "$4000 - $5200"
+      }
+    ],
+    "roomMenu": [
+      {
+        "label": "1",
+        "value": "1"
+      },
+      {
+        "label": "2",
+        "value": "2"
+      },
+      {
+        "label": "3",
+        "value": "3"
+      }
+    ],
+    "footageMenu": [
+      {
+        "label": "1",
+        "value": "1"
+      },
+      {
+        "label": "2",
+        "value": "2"
+      }
+    ]
+  }

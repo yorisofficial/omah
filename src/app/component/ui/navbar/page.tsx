@@ -63,7 +63,7 @@ const Navbar = () => {
     return (
         <div>
             <nav className={`${isScrolled ? "shadow-lg fixed" : "fixed"} border flex justify-between flex-col xl:flex-row z-50 w-full right-0 top-0 xl:px-20 bg-white`}>
-                <div className={`header px-6 flex w-full xl:w-fit justify-between items-center z-50 bg-white border-2 border-primary`}>
+                <div className={`header px-6 flex w-full xl:w-fit justify-between items-center z-50 bg-white`}>
                     <Link href={"/"}>
                         <Image className="w-24 h-24 object-contain" src={"/navbar-brand.svg"} alt="logo" width={100} height={100} />
                     </Link>

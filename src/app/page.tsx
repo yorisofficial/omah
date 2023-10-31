@@ -1,67 +1,45 @@
+"use client"
 import Image from 'next/image'
 import UnderContruction from './component/ui/undercontruct/page'
-import { IconChevronDown } from '@tabler/icons-react'
+import { useState } from 'react'
+import Button from './component/ui/button/page';
+import menuData from '@/app/api/search.json'
+
+interface Option {
+  label: string;
+  value: string;
+}
+
+const locationMenu: Option[] = menuData.locationMenu;
+const priceMenu: Option[] = menuData.priceMenu;
+const roomMenu: Option[] = menuData.roomMenu;
+const footageMenu: Option[] = menuData.footageMenu;
+
 export default function Home() {
-  const locationMenu = [
-    {
-      label: '1',
-      value: 'Denpasar'
-    },
-    {
-      label: '2',
-      value: 'Badung'
-    },
-    {
-      label: '3',
-      value: 'Bangli'
-    },
-    {
-      label: '4',
-      value: 'Gianyar'
-    },
-  ]
-  const priceMenu = [
-    {
-      label: '1',
-      value: '$1300 - $3000'
-    },
-    {
-      label: '2',
-      value: '$2300 - $2800'
-    },
-    {
-      label: '3',
-      value: '$2200 - $2900'
-    },
-    {
-      label: '4',
-      value: '$4000 - $5200'
-    },
-  ]
-  const roomMenu = [
-    {
-      label: '1',
-      value: '1'
-    },
-    {
-      label: '2',
-      value: '2'
-    },
-    {
-      label: '3',
-      value: '3'
-    },
-  ]
-  const footageMenu = [
-    {
-      label: '1',
-      value: '1'
-    },
-    {
-      label: '2',
-      value: '2'
-    },
-  ]
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedPrice, setSelectedPrice] = useState('');
+  const [selectedRoom, setSelectedRoom] = useState('');
+  const [selectedFootage, setSelectedFootage] = useState('');
+
+  const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedLocation(event.target.value);
+  };
+
+  const handlePriceChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedPrice(event.target.value);
+  };
+
+  const handleRoomChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedRoom(event.target.value);
+  };
+
+  const handleFootageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedFootage(event.target.value);
+  };
+
+  const handleSearch = () => {
+    console.log('Search result:', 'Location:', selectedLocation, 'Price:', selectedPrice, 'Room:', selectedRoom, 'Footage:', selectedFootage);
+  };
   return (
     <main className='w-full'>
       <section id='hero'>
@@ -77,43 +55,47 @@ export default function Home() {
           </div>
           <div className="content-menu w-full h-full mt-8">
             <div className="w-full h-full flex flex-col justify-center items-center relative p-4 xl:p-0">
-              <Image className="w-full h-full xl:pr-20 object-contain" src="/home/home-img.svg" height={1300} width={480} alt='hero-image' />
+              <Image className="w-[1300px] h-[480px] xl:pr-20 object-contain" src="/home/home-img.svg" height={500} width={500} alt='hero-image' />
               <div className="w-full xl:w-3/4 h-fit p-4 xl:px-20 py-4 bg-white drop-shadow-lg xl:absolute xl:-bottom-10 right-20">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                  <div className="w-full h-full flex justify-center items-center flex-col">
+                  <div className="w-full h-full flex justify-center items-start flex-col">
                     <label className='font-semibold'>Location</label>
-                    <select>
+                    <select className='' value={selectedLocation} onChange={handleLocationChange}>
+                      <option value="" className='cursor-none'>-- Select Location</option>
                       {locationMenu.map((item, index) => (
                         <option key={index} value={item.value}>{item.value}</option>
                       ))}
                     </select>
                   </div>
-                  <div className="w-full h-full flex justify-center items-center flex-col">
+                  <div className="w-full h-full flex justify-center items-start flex-col">
                     <label className='font-semibold'>Price</label>
-                    <select>
+                    <select value={selectedPrice} onChange={handlePriceChange}>
+                      <option value="" className='cursor-none'>-- Select Price</option>
                       {priceMenu.map((item, index) => (
                         <option key={index} value={item.value}>{item.value}</option>
                       ))}
                     </select>
                   </div>
-                  <div className="w-full h-full flex justify-center items-center flex-col">
+                  <div className="w-full h-full flex justify-center items-start flex-col">
                     <label className='font-semibold'>Room</label>
-                    <select>
+                    <select value={selectedRoom} onChange={handleRoomChange}>
+                      <option value="" className='cursor-none'>-- Select Room</option>
                       {roomMenu.map((item, index) => (
                         <option key={index} value={item.value}>{item.value} Rooms</option>
                       ))}
                     </select>
                   </div>
-                  <div className="w-full h-full flex justify-center items-center flex-col">
+                  <div className="w-full h-full flex justify-center items-start flex-col">
                     <label className='font-semibold'>Footage</label>
-                    <select>
+                    <select value={selectedFootage} onChange={handleFootageChange}>
+                      <option value="" className='cursor-none'>-- Select Footage</option>
                       {footageMenu.map((item, index) => (
                         <option key={index} value={item.value}>{item.value} Footage</option>
                       ))}
                     </select>
                   </div>
                   <div className="button-group w-full h-full col-span-2 md:col-auto flex justify-center items-center mt-4 md:mt-0">
-                    <button className='px-8 py-3 xl:w-full xl:h-full bg-primary text-white font-semibold'>Search</button>
+                    <Button onClick={handleSearch} className="" variant="primary">Search</Button>
                   </div>
                 </div>
               </div>
