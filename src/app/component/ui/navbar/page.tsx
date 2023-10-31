@@ -75,7 +75,7 @@ const Navbar = () => {
                 </div>
                 <div ref={navbarRef} className={`nav-menu xl:hidden flex flex-col gap-8 py-4 px-4 absolute border w-full -top-[400px] left-0 transform duration-500 ${isOpen ? "bg-white top-[100px] opacity-100 -z-50" : "opacity-0 -z-50"}`}>
                     {menuNav.map((item) => (
-                        <Link onClick={handleClick} href={item.href} key={item.id} className={`p-3 rounded ${pathname === item.href ? `bg-black text-white py-3 ${activeNav}` : ""}`}>
+                        <Link onClick={handleClick} href={item.href} key={item.id} className={`p-3 rounded ${pathname === item.href ? `bg-primary text-white py-3 ${activeNav}` : ""}`}>
                             {item.title}
                         </Link>
                     ))}
@@ -87,7 +87,7 @@ const Navbar = () => {
                 </div>
                 <div className={`nav-menu-desktop xl:flex items-center hidden gap-4`}>
                     {menuNav.map((item) => (
-                        <Link onClick={handleClick} href={item.href} key={item.id} className={`p-3 rounded w-28 flex justify-center ${pathname === item.href ? `bg-black text-white py-3 ${activeNav}` : ""}`}>
+                        <Link onClick={handleClick} href={item.href} key={item.id} className={`p-3 rounded w-28 flex justify-center ${pathname === item.href ? `bg-none text-primary font-bold py-3 ${activeNav}` : ""}`}>
                             {item.title}
                         </Link>
                     ))}
