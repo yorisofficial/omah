@@ -55,7 +55,7 @@ export default function Home() {
           </div>
           <div className="content-menu w-full h-full mt-8">
             <div className="w-full h-full flex flex-col justify-center items-center relative p-4 xl:p-0">
-              <Image className="w-[1300px] h-[480px] xl:pr-20 object-contain" src="/home/home-img.svg" height={500} width={500} alt='hero-image' />
+              <Image className="w-full h-full xl:pr-20 object-contain" src="/home/home-img.svg" height={1300} width={500} alt='hero-image' />
               <div className="w-full xl:w-3/4 h-fit p-4 xl:px-20 py-4 bg-white drop-shadow-lg xl:absolute xl:-bottom-10 right-20">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                   <div className="w-full h-full flex justify-center items-start flex-col">
