@@ -14,7 +14,7 @@ const menuNav = [
   },
   {
     id: 2,
-    title: "Looking for",
+    title: "House",
     href: "/safehouse",
   },
   {
