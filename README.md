@@ -34,7 +34,7 @@
 
 ## Design License
 
-- Icons : <a href="https://codedesign.dev/challenge/omah">Code the design</a>
+- Design from : <a href="https://codedesign.dev/challenge/omah">Code the design</a>
 
 # Open License Statement
 
