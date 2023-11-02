@@ -18,6 +18,11 @@ const menuNav = [
     href: "/safehouse",
   },
   {
+    id: 3,
+    title: "Review",
+    href: "/review",
+  },
+  {
     id: 4,
     title: "Blog",
     href: "/blog",
@@ -56,7 +61,7 @@ const Navbar = () => {
     <div>
       <nav
         className={`${isScrolled ? "shadow-lg fixed" : "fixed"} 
-        border border-[#f4f4f4] flex justify-between flex-col xl:flex-row z-50 w-full right-0 top-0 xl:px-20 bg-white drop-shadow-sm`}
+        border border-[#f4f4f4] flex justify-between flex-col xl:flex-row z-40 w-full right-0 top-0 xl:px-20 bg-white drop-shadow-sm`}
       >
         <div
           className={`header px-6 flex w-full xl:w-fit justify-between items-center z-50 bg-white`}

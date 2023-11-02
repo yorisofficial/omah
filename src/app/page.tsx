@@ -5,6 +5,10 @@ import Button from "./component/ui/button/page";
 import menuData from "@/app/api/search.json";
 import Link from "next/link";
 import dataHouse from "@/app/api/house.json";
+import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
+import Slider from "./component/ui/slider/page";
+import UnderContruction from "./component/ui/undercontruct/page";
+import FooterPage from "./(pages)/footer/page";
 
 interface Option {
   label: string;
@@ -22,6 +26,11 @@ export default function Home() {
   const [selectedRoom, setSelectedRoom] = useState("");
   const [selectedFootage, setSelectedFootage] = useState("");
   const [activeTab, setActiveTabe] = useState("forSale");
+  const [isLove, setLove] = useState(false);
+
+  const handleLove = () => {
+    setLove(!isLove);
+  };
   const handleTabChange = (tab: string) => {
     setActiveTabe(tab);
   };
@@ -88,7 +97,7 @@ export default function Home() {
                     <label className="font-semibold">Location</label>
                     <select className="" value={selectedLocation} onChange={handleLocationChange}>
                       <option value="" className="cursor-none">
-                        -- Select Location
+                        Select Location
                       </option>
                       {locationMenu.map((item, index) => (
                         <option key={index} value={item.value}>
@@ -101,7 +110,7 @@ export default function Home() {
                     <label className="font-semibold">Price</label>
                     <select value={selectedPrice} onChange={handlePriceChange}>
                       <option value="" className="cursor-none">
-                        -- Select Price
+                        Select Price
                       </option>
                       {priceMenu.map((item, index) => (
                         <option key={index} value={item.value}>
@@ -114,7 +123,7 @@ export default function Home() {
                     <label className="font-semibold">Room</label>
                     <select value={selectedRoom} onChange={handleRoomChange}>
                       <option value="" className="cursor-none">
-                        -- Select Room
+                        Select Room
                       </option>
                       {roomMenu.map((item, index) => (
                         <option key={index} value={item.value}>
@@ -127,7 +136,7 @@ export default function Home() {
                     <label className="font-semibold">Footage</label>
                     <select value={selectedFootage} onChange={handleFootageChange}>
                       <option value="" className="cursor-none">
-                        -- Select Footage
+                        Select Footage
                       </option>
                       {footageMenu.map((item, index) => (
                         <option key={index} value={item.value}>
@@ -147,8 +156,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className="w-full h-full p-4 md:px-20 border-2 pt-20">
+      <section id="house">
+        <div className="w-full h-full p-4 md:px-20 xl:pt-20">
           <div className="navigation flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
               <h1 className="text-4xl font-semibold">The latest</h1>
@@ -186,7 +195,13 @@ export default function Home() {
                         key={item.id}
                         className="card-component border h-full bg-white drop-shadow-lg border-[#f4f4f4] p-4"
                       >
-                        <div className="header">
+                        <div className="header relative">
+                          <button
+                            onClick={() => handleLove()}
+                            className="absolute top-3 right-3 p-2 rounded-full bg-white text-primary"
+                          >
+                            {isLove ? <IconHeartFilled /> : <IconHeart />}
+                          </button>
                           <Image
                             className="w-full object-contain"
                             src={item.img}
@@ -194,6 +209,9 @@ export default function Home() {
                             width={300}
                             height={300}
                           />
+                          <div className="absolute px-4 py-2 text-primary bottom-0 left-0 bg-white">
+                            {item.review} Room
+                          </div>
                         </div>
                         <div className="body mt-4 w-full flex flex-col justify-between">
                           <div className="flex flex-col h-full">
@@ -254,6 +272,29 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section id="review">
+        <div className="w-full h-full p-4 xl:p-20">
+          <div className="header flex flex-col xl:flex-row justify-between items-center">
+            <h1 className="text-4xl xl:w-2/5">
+              Some people are very satisfied buying a house here
+            </h1>
+            <Link href={"/review"} className="mt-4 md:mt-0">
+              <Button variant="link" className="underline">
+                View all
+              </Button>
+            </Link>
+          </div>
+          <div className="mt-8">
+            <Slider />
+          </div>
+        </div>
+      </section>
+      <section id="blog" className="p-4 xl:p-20">
+        <UnderContruction />
+      </section>
+      <section id="footer">
+        <FooterPage />
       </section>
     </main>
   );

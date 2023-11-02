@@ -5,6 +5,7 @@
             "price": 1450000,
             "img": "/thelatest/green-house.png",
             "name": "Sunny Villa",
+            "review": 3,
             "alamat": {
                 "jalan": "Jl. Gatot Subroto No. 123",
                 "kecamatan": "Semanggi",
@@ -16,6 +17,7 @@
             "price": 1650000,
             "img": "/thelatest/orange-house.png",
             "name": "Green Acres",
+            "review": 2,
             "alamat": {
                 "jalan": "Jl. Sudirman No. 456",
                 "kecamatan": "Setiabudi",
@@ -27,6 +29,7 @@
             "price": 1635000,
             "img": "/thelatest/white-house.png",
             "name": "Ocean Breeze Cottage",
+            "review": 1,
             "alamat": {
                 "jalan": "Jl. Kawi No. 789",
                 "kecamatan": "Klojen",
@@ -38,6 +41,7 @@
             "price": 1635000,
             "img": "/thelatest/white-house.png",
             "name": "Ocean Breeze Cottage",
+            "review": 4,
             "alamat": {
                 "jalan": "Jl. Kawi No. 789",
                 "kecamatan": "Klojen",
@@ -49,6 +53,7 @@
             "price": 1635000,
             "img": "/thelatest/white-house.png",
             "name": "Ocean Breeze Cottage",
+            "review": 2,
             "alamat": {
                 "jalan": "Jl. Kawi No. 789",
                 "kecamatan": "Klojen",
@@ -62,6 +67,7 @@
             "price": 1450000,
             "img": "/thelatest/white-house.png",
             "name": "Sunny Villa",
+            "review": 4,
             "alamat": {
                 "jalan": "Jl. Gatot Subroto No. 123",
                 "kecamatan": "Semanggi",
@@ -73,6 +79,7 @@
             "price": 1650000,
             "img": "/thelatest/white-house.png",
             "name": "Green Acres",
+            "review": 3,
             "alamat": {
                 "jalan": "Jl. Sudirman No. 456",
                 "kecamatan": "Setiabudi",
@@ -84,6 +91,7 @@
             "price": 1635000,
             "img": "/thelatest/white-house.png",
             "name": "Ocean Breeze Cottage",
+            "review": 5,
             "alamat": {
                 "jalan": "Jl. Kawi No. 789",
                 "kecamatan": "Klojen",

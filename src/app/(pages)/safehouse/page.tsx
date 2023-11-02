@@ -3,12 +3,17 @@ import React, { use, useEffect, useRef, useState } from "react";
 import Button from "@/app/component/ui/button/page";
 import dataHouse from "@/app/api/house.json";
 import Image from "next/image";
-import { IconFilter, IconFilterFilled } from "@tabler/icons-react";
+import { IconFilter, IconFilterFilled, IconHeart, IconHeartFilled } from "@tabler/icons-react";
 
 const HousePage = () => {
   const [activeTab, setActiveTabe] = useState("forSale");
   const [isOpenMenu, setOpenMenu] = useState(false);
   const openMenu = useRef(null);
+  const [isLove, setLove] = useState(false);
+  const handleLove = (id: number) => {
+    setLove(!isLove);
+    // Lakukan operasi lain yang berkaitan dengan id jika diperlukan
+  };
   const handleTabChange = (tab: string) => {
     setActiveTabe(tab);
     console.log(activeTab);
@@ -106,7 +111,13 @@ const HousePage = () => {
                   key={item.id}
                   className="card-component border h-full bg-white drop-shadow-lg border-[#f4f4f4] p-4"
                 >
-                  <div className="header">
+                  <div className="header relative">
+                    <button
+                      onClick={() => handleLove(item.id)}
+                      className="absolute top-3 right-3 p-2 rounded-full bg-white text-primary"
+                    >
+                      {isLove ? <IconHeartFilled /> : <IconHeart />}
+                    </button>
                     <Image
                       className="w-full object-contain"
                       src={item.img}
@@ -114,6 +125,9 @@ const HousePage = () => {
                       width={300}
                       height={300}
                     />
+                    <div className="absolute px-4 py-2 text-primary bottom-0 left-0 bg-white">
+                      {item.review} Room
+                    </div>
                   </div>
                   <div className="body mt-4 w-full flex flex-col justify-between">
                     <div className="flex flex-col h-full">
@@ -139,7 +153,13 @@ const HousePage = () => {
                   key={item.id}
                   className="card-component border h-full bg-white drop-shadow-lg border-[#f4f4f4] p-4"
                 >
-                  <div className="header">
+                  <div className="header relative">
+                    <button
+                      onClick={() => handleLove(item.id)}
+                      className="absolute top-3 right-3 p-2 rounded-full bg-white text-primary"
+                    >
+                      {isLove ? <IconHeartFilled /> : <IconHeart />}
+                    </button>
                     <Image
                       className="w-full object-contain"
                       src={item.img}
@@ -147,6 +167,9 @@ const HousePage = () => {
                       width={300}
                       height={300}
                     />
+                    <div className="absolute px-4 py-2 text-primary bottom-0 left-0 bg-white">
+                      {item.review} Room
+                    </div>
                   </div>
                   <div className="body mt-4 w-full flex flex-col justify-between">
                     <div className="flex flex-col h-full">

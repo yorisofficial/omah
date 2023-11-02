@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "img": "/review/img-1.png",
+        "name": "Jone Doe",
+        "review": "I am very satisfied buying a house here because it is fast and easy"
+    },
+    {
+        "id": 2,
+        "img": "/review/img-2.png",
+        "name": "Angel Doe",
+        "review": "Buying a house here is very cheap and high quality"
+    },
+    {
+        "id": 3,
+        "img": "/review/img-2.png",
+        "name": "Gipang Doe",
+        "review": "Buying a house here is very cheap and high quality"
+    }
+]
