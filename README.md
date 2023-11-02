@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### 🌐 English
 
-## Getting Started
+# TRAVLOG (DESKTOP & SMARTPHONE)
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![SHOT IMAGE](https://github.com/yorisofficial/omah/blob/main/public/shots/shots009.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Feature
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Responsive website (Phone, Tablet, & Desktop)
+- Responsive navbar
+- slider element (Swiper JS Lib)
+- Animation on load & while scrolling (AOS library)
+- short view
+- SEO friendly
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Framework
 
-## Learn More
+| Tech         | #                                                                                                                                                                                                                                                                                      |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tailwind CSS | ![Tailwind CSS](https://avatars.githubusercontent.com/u/67109815?s=40)                                                                                                                                                                                                                 |
+| Next JS      | ![Next JS](https://camo.githubusercontent.com/f21f1fa29dfe5e1d0772b0efe2f43eca2f6dc14f2fede8d9cbef4a3a8210c91d/68747470733a2f2f6173736574732e76657263656c2e636f6d2f696d6167652f75706c6f61642f76313636323133303535392f6e6578746a732f49636f6e5f6c696768745f6261636b67726f756e642e706e67) |
+| Typescript   | ![Next JS](https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png)                                                                                                                                                 |
 
-To learn more about Next.js, take a look at the following resources:
+## Theme Colors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Color Name     | Colors Code | Color Sample                                            |
+| -------------- | ----------- | ------------------------------------------------------- |
+| Primary Color  | #F58634     | ![Black](https://via.placeholder.com/20/F58634?text=+)  |
+| Scondary Color | #1B2021     | ![Random](https://via.placeholder.com/20/1B2021?text=+) |
+| 3rd Color      | #828282     | ![White](https://via.placeholder.com/20/828282?text=+)  |
+| Base Color     | #FFFFFF     | ![White](https://via.placeholder.com/20/FFFFFF?text=+)  |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Design License
 
-## Deploy on Vercel
+- Icons : <a href="https://codedesign.dev/challenge/omah">Code the design</a>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Open License Statement
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under an open license, granting freedom to use it in commercial, personal, or educational projects.
+
+| Usage       | License |
+| ----------- | ------- |
+| Commercial  | Allowed |
+| Personal    | Allowed |
+| Educational | Allowed |
+
+## How to Use
+
+1. Clone this repository to your local machine.
+2. Open the cloned folder in your code editor.
+3. Open your command prompt (CMD) or terminal.
+4. Run the following code in the terminal to generate the Tailwind CSS file:
+   ```
+   npm run dev
+   ```
+5. Open your browser or use a Live Preview extension to see the navigation bar in action.
+
+Happy coding!
+
+---
