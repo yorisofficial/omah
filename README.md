@@ -1,6 +1,6 @@
 ### 🌐 English
 
-# TRAVLOG (DESKTOP & SMARTPHONE)
+# Omah - Real Estate Website Design (FRONTEND DESIGN)
 
 ## Demo
 
